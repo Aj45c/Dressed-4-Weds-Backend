@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const userController = require('./controllers/userController');
 
 //----------------------------------------------------------
 const app = express();
@@ -18,11 +19,14 @@ mongoose.connection
 
 
 app.use(cors());
+app.use(express.json());
+
 
 //---------------------------------
 app.get('/', (req, res) => {
     res.send("Hey!")
 });
 
+app.use('/NewUser', userController);
 
 app.listen(PORT, () => { console.log(`Listening on port:${PORT}`)});
