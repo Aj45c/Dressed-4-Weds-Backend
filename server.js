@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
     res.send("Hey!")
 });
 
-app.use('/NewUser', userController);
+app.use('/NewUser', userController.newUser);
+app.use('/Login', userController.userLogin)
 
 app.listen(PORT, () => { console.log(`Listening on port:${PORT}`)});
