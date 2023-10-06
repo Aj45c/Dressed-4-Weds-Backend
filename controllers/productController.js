@@ -1,8 +1,7 @@
-const router = express.Router();
 const Product = require('../models/product');
 
 //------------------------------------------------------------------------------------
-router.get('/products', async (req, res) => {
+const showProducts = async (req, res) => {
     try {
 
         const products = await Product.find();
@@ -18,11 +17,11 @@ router.get('/products', async (req, res) => {
 
             res.status(500).json({ error: "Couldn't find products"});
     }
-});
+};
 
 //------------------------------------------------------------------------------------
 
-router.get('/products/:productId', async (req, res) => {
+const getProduct = async (req, res) => {
     try {
         const productId = req.params.productId;
 
@@ -39,21 +38,23 @@ router.get('/products/:productId', async (req, res) => {
 
             res.status(500).json({ error: "Couldn't get product details"});
     }
-});
+};
 
 //---------------------------------------------------------------------------------------
 
-router.post('/products/:productId/to-cart', async (req, res) => {
+const addProduct = async (req, res) => {
     try {
         const productId = req.params.productId;
 
         const product = await Product.findById(productId);
 
+
+        res.status(200).json({ message: 'Added item to cart!'})
     } catch (error){
         console.error(error)
         res.status(500).json( {error: "Couldn't add product to cart"})
     }
-});
+};
 
 
-module.exports = router;
+module.exports = { addProduct, showProducts, getProduct };
