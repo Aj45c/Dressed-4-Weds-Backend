@@ -35,8 +35,9 @@ const newUser = async (req, res) => {
 }
 }
 
+//------------------------------------------------------------------------------------------------
 const userLogin = async (req, res) => {
-    try {
+    try{
         const {email, password} = req.body;
 
         const user = await User.findOne({ email })
@@ -49,7 +50,7 @@ const userLogin = async (req, res) => {
 
         if (!comparePasswords) {
 
-            return res.satus(400).json({ message: 'Invalid Username/Password'})
+            return res.status(400).json({ message: 'Invalid Username/Password'})
         }
 
         const token = generateToken(user)

@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const userController = require('./controllers/userController');
+const userRoutes = require('./routes/userRoutes')
 
-//----------------------------------------------------------
 const app = express();
 
 require('dotenv').config();
@@ -22,12 +21,12 @@ app.use(cors());
 app.use(express.json());
 
 
-//---------------------------------
+
+//ROUTES---------------------------------
 app.get('/', (req, res) => {
     res.send("Hey!")
 });
 
-app.use('/NewUser', userController.newUser);
-app.use('/Login', userController.userLogin)
+app.use('/users', userRoutes);
 
 app.listen(PORT, () => { console.log(`Listening on port:${PORT}`)});
