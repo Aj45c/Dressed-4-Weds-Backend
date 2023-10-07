@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes')
+const productRoutes = require('./routes/productRoutes')
+
 
 const app = express();
 
@@ -28,5 +30,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/products', productRoutes);
 
 app.listen(PORT, () => { console.log(`Listening on port:${PORT}`)});

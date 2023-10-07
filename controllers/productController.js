@@ -42,19 +42,5 @@ const getProduct = async (req, res) => {
 
 //---------------------------------------------------------------------------------------
 
-const addProduct = async (req, res) => {
-    try {
-        const productId = req.params.productId;
 
-        const product = await Product.findById(productId);
-
-
-        res.status(200).json({ message: 'Added item to cart!'})
-    } catch (error){
-        console.error(error)
-        res.status(500).json( {error: "Couldn't add product to cart"})
-    }
-};
-
-
-module.exports = { addProduct, showProducts, getProduct };
+module.exports = { showProducts, getProduct };
