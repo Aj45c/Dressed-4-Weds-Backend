@@ -8,6 +8,10 @@ router.use(verifyToken);
 
 router.post('/add-to-cart', cartController.addToCart);
 
+router.delete('/remove-from-cart/:itemId', cartController.removeFromCart);
+
+router.get('/view-cart', cartController.viewCart);
+
 
 
 module.exports = router;

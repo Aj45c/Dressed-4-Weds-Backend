@@ -24,7 +24,7 @@ const newUser = async (req, res) => {
         //What I did in this try section was get the info for the req.body and then check to see if the email they used
         // was used before using existingUser and then I hashed the password because secruity. Udpated the new user using
         // the hashed password and save it to the db
-        const token = generateToken(newUser);
+        const token = generateToken(user);
 
         res.status(201).json({ message: "New User created!", token})
 
