@@ -10,4 +10,4 @@ This backend contains the logic for user creation and login, product management 
 - Bcyrpt
 - Morgan
 
-Dressed 4 Weds Backend is the Api I will be using for an upcoming website! This is my first shot at an Ecommerce website using any stack. I am getting used to doing full-stack development using MERN stack again and this was a great challenge to start again. Thank you for taking the time to check out my project!
+Dressed 4 Weds Backend is the API I will be using for an upcoming website! This is my first shot at an Ecommerce website using any stack. I am getting used to doing full-stack development using MERN stack again and this was a great challenge to start again. Thank you for taking the time to check out my project!
