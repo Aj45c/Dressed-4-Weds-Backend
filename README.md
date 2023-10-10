@@ -1,6 +1,6 @@
 # Dressed-4-Weds-Backend
 
-Dress4Weds is an Ecommerce website for wedding attire. It handles user authentication, product management, and shopping cart functionality. This project is built using the MERN stack, combining MongoDB, Express.js, React, and Node.js.
+Dressed4Weds is an Ecommerce website for wedding attire. It handles user authentication, product management, and shopping cart functionality. This project is built using the MERN stack, combining MongoDB, Express.js, React, and Node.js.
 
 This backend contains the logic for user creation and login, product management and basic cart functions. It uses the following technolgies:
 
